@@ -15,29 +15,247 @@
 <body>
     <div class="container">
         <div class="page-header">
-            <h1>Monopoly Stock Exchange <span id='playernamelabel' class="label label-warning pull-right"><small id="playername" style="color:white">NOT CURRENTLY PLAYING</small></span></h1></div>
+            <h1>Monopoly Stock Exchange <span id='playernamelabel' class="label label-warning pull-right"><small id="playername" style="color:white">NOT CURRENTLY PLAYING  </small><button id="setplayerbutton" type="button" class="btn btn-success">Set Player</button>
+</span></h1></div>
         <div class="row">
             <div class="col-sm-3">
                 <div class="panel panel-default">
-                    <div class="panel-heading text-center">
-                        <h4>Players</h4>
-                    </div>
                     <div class="panel-body">
-                        <table class="table table-condensed table-striped">
-                            <tbody id='players'>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <div class="panel panel-default">
-                    <div class="panel-heading text-center">
-                        <h4>Commands</h4>
-                    </div>
-                    <div class="panel-body">
-                        <table class="table table-condensed table-striped">
-                            <tbody id='commands'>
-                            </tbody>
-                        </table>
+                        <div id='beginblock' class="">
+                            <button id="addplayerbutton" type="button" class="btn btn-primary btn-block btn-lg">Add Player</button>
+                            <button id="startgamebutton" type="button" class="btn btn-success btn-block btn-lg">Start Game</button>
+                        </div>
+                        <div id='mainblock' class="">
+                            <button id="gobutton" type="button" class="btn btn-warning btn-block">GO</button>
+                            <button id="buypropertybutton" type="button" class="btn btn-success btn-block">Buy Property</button>
+                            <button id="payrentbutton" type="button" class="btn btn-danger btn-block">Pay Rent</button>
+                        </div>
+                        <div id='sharesblock' class="">
+                            <hr>
+                            <h5 class='text-center'>Shares</h5>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <button id="buysharesbutton" type="button" class="btn btn-success btn-block">Buy</button>
+                                </div>
+                                <div class="col-md-6">
+                                    <button id="sellsharesbutton" type="button" class="btn btn-danger btn-block">Sell</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id='housesblock' class="">
+                            <hr>
+                            <h5 class='text-center'>Houses</h5>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <button id="buyhousesbutton" type="button" class="btn btn-success btn-block">Buy</button>
+                                </div>
+                                <div class="col-md-6">
+                                    <button id="sellhousesbutton" type="button" class="btn btn-danger btn-block">Sell</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id='tradeblock' class="">
+                            <hr>
+                            <h5 class='text-center'>Trade</h5>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <button id="trademoneybutton" type="button" class="btn btn-info btn-block">Money</button>
+                                </div>
+                                <div class="col-md-6">
+                                    <button id="tradesharesbutton" type="button" class="btn btn-info btn-block">Shares</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id='moneyblock' class="">
+                            <hr>
+                            <h5 class='text-center'>Money</h5>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <button id="addmoneybutton" type="button" class="btn btn-success btn-block">Add</button>
+                                </div>
+                                <div class="col-md-6">
+                                    <button id="removemoneybutton" type="button" class="btn btn-danger btn-block">Remove</button>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div id='addplayerbuttonblock' class="">
+                            <h3 class='text-center'>Add Player</h3>
+                            <hr>
+                            <form id='addplayerform' action="">
+                                <div class='form-group'>
+                                    <input id='playernameinput' type="text" class="form-control text-center" placeholder="Player Name" autocapitalize="off" autocorrect="off" spellcheck="off" autocomplete="off">
+                                    <br>
+                                    <button id="addplayersubmit" type="button" class="btn btn-success btn-block" type="submit">Add Player</button>
+                                </div>
+                            </form>
+                            <hr>
+                            <button id="canceladdplayerbutton" type="button" class="btn btn-danger btn-block">Cancel</button>
+                        </div>
+
+                        <div id='buypropertybuttonblock' class="">
+                            <h3 class='text-center'>Buy Property</h3>
+                            <hr>
+                            <form id='buypropertyform' action="">
+                                <div class='form-group'>
+                                    <input id='buypropertyinput' type="number" class="form-control text-center" placeholder="Property Number" autocapitalize="off" autocorrect="off" spellcheck="off" autocomplete="off">
+                                    <br>
+                                    <button id="buypropertysubmit" type="button" class="btn btn-success btn-block" type="submit">Buy</button>
+                                </div>
+                            </form>
+                            <hr>
+                            <button id="" type="button" class="btn btn-danger btn-block loadmaincommandsbutton">Cancel</button>
+                        </div>
+
+                        <div id='payrentbuttonblock' class="">
+                            <h3 class='text-center'>Pay Rent</h3>
+                            <hr>
+                            <form id='payrentform' action="">
+                                <div class='form-group'>
+                                    <input id='payrentinput' type="number" class="form-control text-center" placeholder="Property Number" autocapitalize="off" autocorrect="off" spellcheck="off" autocomplete="off">
+                                    <br>
+                                    <button id="payrentsubmit" type="button" class="btn btn-success btn-block" type="submit">Pay</button>
+                                </div>
+                            </form>
+                            <hr>
+                            <button id="" type="button" class="btn btn-danger btn-block loadmaincommandsbutton">Cancel</button>
+                        </div>
+
+                        <div id='moneyaddbuttonblock' class="">
+                            <h3 class='text-center'>Add Money</h3>
+                            <hr>
+                            <form id='moneyaddform' action="">
+                                <div class='form-group'>
+                                    <input id='moneyaddinput' type="number" class="form-control text-center" placeholder="Amount" autocapitalize="off" autocorrect="off" spellcheck="off" autocomplete="off">
+                                    <br>
+                                    <button id="moneyaddsubmit" type="button" class="btn btn-success btn-block" type="submit">Add Money</button>
+                                </div>
+                            </form>
+                            <hr>
+                            <button id="" type="button" class="btn btn-danger btn-block loadmaincommandsbutton">Cancel</button>
+                        </div>
+
+                        <div id='moneyremovebuttonblock' class="">
+                            <h3 class='text-center'>Remove Money</h3>
+                            <hr>
+                            <form id='moneyremoveform' action="">
+                                <div class='form-group'>
+                                    <input id='moneyremoveinput' type="number" class="form-control text-center" placeholder="Amount" autocapitalize="off" autocorrect="off" spellcheck="off" autocomplete="off">
+                                    <br>
+                                    <button id="moneyremovesubmit" type="button" class="btn btn-success btn-block" type="submit">Remove Money</button>
+                                </div>
+                            </form>
+                            <hr>
+                            <button id="" type="button" class="btn btn-danger btn-block loadmaincommandsbutton">Cancel</button>
+                        </div>
+                        
+                        <div id='setplayerbuttonblock' class="">
+                            <h3 class='text-center'>Set Player</h3>
+                            <hr>
+                            <form id='setplayerform' action="">
+                                <div class='form-group'>
+                                    <input id='setplayerinput' type="number" class="form-control text-center" placeholder="Player Number" autocapitalize="off" autocorrect="off" spellcheck="off" autocomplete="off">
+                                    <br>
+                                    <button id="setplayersubmit" type="button" class="btn btn-success btn-block" type="submit">Set Player</button>
+                                </div>
+                            </form>
+                            <hr>
+                            <button id="canceladdplayerbutton" type="button" class="btn btn-danger btn-block">Cancel</button>
+                        </div>
+
+                        <div id='sharesaddbuttonblock' class="">
+                            <h3 class='text-center'>Buy Shares</h3>
+                            <hr>
+                            <form id='sharesaddform' action="">
+                                <div class='form-group'>
+                                    <input id='sharesaddpropertyinput' type="number" class="form-control text-center" placeholder="Property Number" autocapitalize="off" autocorrect="off" spellcheck="off" autocomplete="off">
+                                    <input id='sharesaddnumberinput' type="number" class="form-control text-center" placeholder="Number of Shares" autocapitalize="off" autocorrect="off" spellcheck="off" autocomplete="off">
+                                    <br>
+                                    <button id="sharesaddsubmit" type="button" class="btn btn-success btn-block" type="submit">Buy Shares</button>
+                                </div>
+                            </form>
+                            <hr>
+                            <button id="" type="button" class="btn btn-danger btn-block loadmaincommandsbutton">Cancel</button>
+                        </div>
+
+                        <div id='sharesremovebuttonblock' class="">
+                            <h3 class='text-center'>Sell Shares</h3>
+                            <hr>
+                            <form id='sharesremoveform' action="">
+                                <div class='form-group'>
+                                    <input id='sharesremovepropertyinput' type="number" class="form-control text-center" placeholder="Property Number" autocapitalize="off" autocorrect="off" spellcheck="off" autocomplete="off">
+                                    <input id='sharesremovenumberinput' type="number" class="form-control text-center" placeholder="Number of Shares" autocapitalize="off" autocorrect="off" spellcheck="off" autocomplete="off">
+                                    <br>
+                                    <button id="sharesremovesubmit" type="button" class="btn btn-success btn-block" type="submit">Sell Shares</button>
+                                </div>
+                            </form>
+                            <hr>
+                            <button id="" type="button" class="btn btn-danger btn-block loadmaincommandsbutton">Cancel</button>
+                        </div>
+
+                        <div id='housesremovebuttonblock' class="">
+                            <h3 class='text-center'>Sell Houses</h3>
+                            <hr>
+                            <form id='housesremoveform' action="">
+                                <div class='form-group'>
+                                    <input id='housesremovepropertyinput' type="number" class="form-control text-center" placeholder="Property Number" autocapitalize="off" autocorrect="off" spellcheck="off" autocomplete="off">
+                                    <input id='housesremovenumberinput' type="number" class="form-control text-center" placeholder="Number of Houses" autocapitalize="off" autocorrect="off" spellcheck="off" autocomplete="off">
+                                    <br>
+                                    <button id="housesremovesubmit" type="button" class="btn btn-success btn-block" type="submit">Sell Houses</button>
+                                </div>
+                            </form>
+                            <hr>
+                            <button id="" type="button" class="btn btn-danger btn-block loadmaincommandsbutton">Cancel</button>
+                        </div>
+
+                        <div id='housesaddbuttonblock' class="">
+                            <h3 class='text-center'>Buy Houses</h3>
+                            <hr>
+                            <form id='housesaddform' action="">
+                                <div class='form-group'>
+                                    <input id='housesaddpropertyinput' type="number" class="form-control text-center" placeholder="Property Number" autocapitalize="off" autocorrect="off" spellcheck="off" autocomplete="off">
+                                    <input id='housesaddnumberinput' type="number" class="form-control text-center" placeholder="Number of Houses" autocapitalize="off" autocorrect="off" spellcheck="off" autocomplete="off">
+                                    <br>
+                                    <button id="housesaddsubmit" type="button" class="btn btn-success btn-block" type="submit">Buy Houses</button>
+                                </div>
+                            </form>
+                            <hr>
+                            <button id="" type="button" class="btn btn-danger btn-block loadmaincommandsbutton">Cancel</button>
+                        </div>
+
+                        <div id='trademoneybuttonblock' class="">
+                            <h3 class='text-center'>Trade Money</h3>
+                            <hr>
+                            <form id='trademoneyform' action="">
+                                <div class='form-group'>
+                                    <input id='trademoneytoinput' type="number" class="form-control text-center" placeholder="Player Number" autocapitalize="off" autocorrect="off" spellcheck="off" autocomplete="off">
+                                    <input id='trademoneyamountinput' type="number" class="form-control text-center" placeholder="Amount to Trade" autocapitalize="off" autocorrect="off" spellcheck="off" autocomplete="off">
+                                    <br>
+                                    <button id="trademoneysubmit" type="button" class="btn btn-success btn-block" type="submit">Trade Money</button>
+                                </div>
+                            </form>
+                            <hr>
+                            <button id="" type="button" class="btn btn-danger btn-block loadmaincommandsbutton">Cancel</button>
+                        </div>
+
+                        <div id='tradesharesbuttonblock' class="">
+                            <h3 class='text-center'>Trade Shares</h3>
+                            <hr>
+                            <form id='tradesharesform' action="">
+                                <div class='form-group'>
+                                    <input id='tradesharestoinput' type="number" class="form-control text-center" placeholder="Player Number" autocapitalize="off" autocorrect="off" spellcheck="off" autocomplete="off">
+                                    <input id='tradesharespropertyinput' type="number" class="form-control text-center" placeholder="Property Number" autocapitalize="off" autocorrect="off" spellcheck="off" autocomplete="off">
+                                    <input id='tradesharesamountinput' type="number" class="form-control text-center" placeholder="Amount to Trade" autocapitalize="off" autocorrect="off" spellcheck="off" autocomplete="off">
+                                    <br>
+                                    <button id="tradesharessubmit" type="button" class="btn btn-success btn-block" type="submit">Trade Shares</button>
+                                </div>
+                            </form>
+                            <hr>
+                            <button id="" type="button" class="btn btn-danger btn-block loadmaincommandsbutton">Cancel</button>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -58,7 +276,12 @@
                     </div>
                     <table class="table table-condensed table-striped">
                         <thead id='gameinfotitle'></thead>
-                        <tbody id='gameinfolist'></tbody>
+                        <tbody id='gameinfolist'>
+                            <th>
+                                <div class="page-header text-center">
+                                    <h1>Game not started</h1></div>
+                            </th>
+                        </tbody>
                     </table>
                 </div>
             </div>
@@ -67,7 +290,7 @@
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <div id='alerttext'></div>
                 </div>
-                <form action="">
+                <form id='commandform' action="">
                     <div class="form-group form-inline">
                         <input id="commandbox" type="text" class="form-control" placeholder="Enter Command" autocapitalize="off" autocorrect="off" spellcheck="off" autocomplete="off">
                         <span class="form-group-btn">
@@ -75,6 +298,17 @@
             </span>
                     </div>
                 </form>
+                <div class="panel panel-default">
+                    <div class="panel-heading text-center">
+                        <h4>Players</h4>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table table-condensed table-striped">
+                            <tbody id='players'>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
                 <div class="panel panel-default">
                     <div class="panel-heading text-center">
                         <h4>Game Log</h4>
