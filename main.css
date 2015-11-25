@@ -1,0 +1,33 @@
+#houses .colorbox:first-child {
+    margin-left: 10px;
+}
+
+.colorbox {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 5px 5px 5px 5px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, .2);
+}
+
+#houses {
+    display: inline-block;
+}
+
+#sendcommand {
+    width: 25%;
+}
+
+#commandbox {
+    width: 73%;
+}
+
+.glyphicon-arrow-up {
+    color: green;
+}
+
+.glyphicon-arrow-down {
+    color: red;
+}
